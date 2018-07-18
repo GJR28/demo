@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>贪吃蛇</title>
+	<style type="text/css">
+		* {
+			padding: 0;
+			margin: 0;
+			list-style: none;
+		}
+		.box {
+			width: 600px;
+			height: 600px;
+			margin: 0 auto;
+		}
+		.row {
+			width: 600px;
+			height: 30px;
+
+		}
+		.grid {
+			float: left;
+			width: 30px;
+			height: 30px;
+			border: 1px solid pink;
+			box-sizing: border-box;
+		}
+	</style>
+</head>
+<body>
+	<!-- 引入 -->
+	<script type="text/javascript" src="js/Game.js"></script>
+	<script type="text/javascript" src="js/Snake.js"></script>
+	<script type="text/javascript" src="js/Food.js"></script>
+	<script type="text/javascript" src="js/Block.js"></script>
+	<script type="text/javascript" src="js/Map.js"></script>
+	<script type="text/javascript">
+		// 初始化地图
+		var map = new Map(600, 600, 20, 20);
+		// 定义蛇图片对象
+		var snakeObj = {
+			head_pic: ["img/1.png", "img/2.png", "img/3.png", "img/4.png"],
+			body_pic: ["img/5.png"],
+			tail_pic: ["img/6.png", "img/7.png", "img/8.png", "img/9.png"]
+		}
+		// 初始化蛇
+		var snake = new Snake(snakeObj);
+		// 初始化食物
+		var food = new Food(2, 5, "img/food.jpg");
+		// 初始化障碍物
+		var block = new Block("img/block.png");
+		// 初始化游戏
+		var g = new Game(map, snake, food, block);
+	</script>
+</body>
+</html>
